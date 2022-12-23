@@ -1,0 +1,59 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.habackground {
+    background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/habg3.jpg)0;
+    background-size: cover;
+    height: 650px;
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#haimg {
+    height: 650px;
+    width: 700px;
+    margin-top: -20px;
+    margin-left: -40px;
+}
+
+.haimg {
+    z-index: 15;
+}
+
+#hatx1 {
+    margin-left: 40px;
+    font-size: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 70px;
+    align-items: center;
+    font-weight: bolder;
+    color: white;
+}
+
+#haslogan {
+    margin-left: 60px;
+    margin-top: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
+
+#habtn {
+    margin-left: 80px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0 0 5px greenyellow, 0 0 20px greenyellow;
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#habtn:hover {
+    background-color: lawngreen;
+    transition: 0.5s;
+    box-shadow: 0 0 5px greenyellow, 0 0 20px greenyellow, 0 0 50px greenyellow, 0 0 100px greenyellow, 0 0 200px greenyellow;
+}
