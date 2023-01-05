@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="contact.css">
     <link rel="preload" as="image" href="important.png">
+    <script src="contact.js"></script>
 </head>
 
 <body>
@@ -57,9 +59,76 @@
             </div>
         </div>
     </div>
-    <div class="row" id="hacontact">
+    <div class="row">
+
+
+        <div class="col-md-6" id="hacontact">
+
+
+
+            <div class="hahead">
+                <h3 id="hacontacthead">CONTACT FORM</h3>
+            </div>
+            <div class="input-cont">
+
+                <form>
+                    <label>NAME</label><br>
+                    <input type="text" id="inp-box1"><br>
+                    <label>EMAIL</label><br>
+                    <input type="text" id="inp-box2"><br>
+                    <label>TYPE MESSAGE</label><br>
+                    <textarea name="" id="hatxtarea" cols="38" rows="5"></textarea><br>
+                    <button id="habtn1" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">Send</button>
+                    <!-- Button trigger modal -->
+
+
+
+                </form>
+
+
+            </div>
+
+
+
+
+
+        </div>
+        <div class="col-md-6 mt-3" style="border-radius: 30px;">
+            <div style="width: 100%"><iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=karachi%20zoo+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure acres/hectares on map</a></iframe></div>
+        </div>
 
     </div>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <img src="images/hatick.png" alt="">
+
+                <div class="modal-body">
+                    <h2>Thank You!</h2>
+                    <p>Your message has been successfully submitted. Thanks!</p>
+                    <button type="button" id="modalbtn1" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyAbJg-z2NyixXM20f2tQHButD2dI0yPIwg",
+        authDomain: "practicedb-f63f7.firebaseapp.com", projectId: "practicedb-f63f7", storageBucket: "practicedb-f63f7.appspot.com", messagingSenderId: "261803657352", appId: "1:261803657352:web:be3a613baab1c2b91b373d", measurementId: "G-YS6N1R9Q4Z"
+        }; const app = initializeApp(firebaseConfig); import { getDatabase, ref, get, set, child, update, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"; const db = getDatabase(); var name = document.getElementById('inp-box1');
+        var email = document.getElementById('inp-box2');var insert=document.getElementById('modalbtn1'); var message = document.getElementById('hatxtarea'); function habtn12() { set(ref(db, "theuser/" + name.value), { Nameuser: name.value, emailuser:
+        email.value, messageuser: message.value }).then(() => { console.log("hello"); alert("MESSAGE STORED SUCCESSFULLY "); }).catch((error) => { alert(`sorry error ${error}`); }); } insert.addEventListener('click',habtn12)
+
+
+    </script>
+
 </body>
 
 </html>
